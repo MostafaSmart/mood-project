@@ -1,6 +1,7 @@
 @import url("colors/light.css");
 
 @import url("nav.css");
+@import url("footer.css");
 
 
 :root {
@@ -65,11 +66,11 @@ body {
 .mood-item input:checked + .mood-btn {
     background: #fff;
     box-shadow: 0 15px 30px rgba(118, 75, 162, 0.15);
-    border: 1px solid #764ba2;
+    border: 1px solid var(--primary-color-container);
     transform: scale(1.1);
 }
 
-.mood-item input:checked + .mood-btn .battery-icon { color: #764ba2; }
+.mood-item input:checked + .mood-btn .battery-icon { color: var(--primary-color-container); }
 
 /* Input Area */
 .ai-input-group textarea {
@@ -82,7 +83,7 @@ body {
 }
 
 .ai-input-group textarea:focus {
-    border-color: #764ba2;
+    border-color:var(--primary-color);
     box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
 }
 
@@ -99,13 +100,13 @@ body {
 
 .btn-primary-custom:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+    box-shadow: 0 8px 20px var(--primary-gradient);
 }
 
 .response-area {
     display: none;
     background: #f8fafc;
-    border-right: 4px solid #764ba2;
+    border-right: 4px solid var(--primary-color);
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;

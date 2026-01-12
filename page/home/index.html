@@ -25,8 +25,8 @@
         <!-- Header Section -->
         
         <header class="text-center mb-5">
-            <h2 class="fw-bold">مرحباً بك في مساعدك الذكي</h2>
-            <p class="text-muted">أخبرنا كيف تشعر، واسأل عما يدور في ذهنك</p>
+            <h2 class="fw-bold">مرحباً بك في منصة </h2>
+            <p class="text-muted">أخبرنا كيف تشعراليوم لنساعدك في اختيار وجباتك المناسبة</p>
         </header>
 
       
@@ -75,7 +75,7 @@
         <!-- 2. AI Input Section -->
         <section class="custom-card">
             <div class="ai-input-group">
-                <textarea id="userInput" class="form-control mb-3" rows="3" placeholder="بماذا تفكر الآن؟..."></textarea>
+                <textarea id="userInput" class="form-control mb-3" rows="3" placeholder=" اكتب بماذا تشعر به اليوم...."></textarea>
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="text-muted small"><i class="fas fa-info-circle me-1"></i> Gemini AI مدعوم بواسطة</span>
                     <button id="btnSend" class="btn btn-primary-custom">
@@ -98,28 +98,15 @@
         </section>
     </main>
 
+
+     <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="../../js/main.js"></script>
 
-    <script>
-        $(function(){
-            // تحميل النافبار
-            $("#navbar-placeholder").load("../partials/nav.html");
 
-            // مثال بسيط لإظهار منطقة الاستجابة عند الضغط (للتجربة فقط)
-            /*
-            $("#btnSend").click(function(){
-                $("#loader").fadeIn();
-                setTimeout(() => {
-                    $("#loader").hide();
-                    $("#responseArea").slideDown();
-                    $("#aiContent").text("هذا نص تجريبي للإجابة...");
-                }, 1500);
-            });
-            */
-        });
-    </script>
 </body>
 </html>

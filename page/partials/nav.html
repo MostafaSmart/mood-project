@@ -1,43 +1,45 @@
-
 <nav class="navbar navbar-expand-lg fixed-top modern-navbar">
     <div class="container">
-        
+
         <!-- جهة اليسار: معلومات المستخدم وخروج -->
         <div class="d-flex align-items-center order-lg-1">
-            <div class="user-profile d-none d-sm-flex align-items-center me-3">
-                <div class="user-avatar">
-                    <i class="fas fa-user"></i>
+            <a class="nav-link active" href="../home/profile.html">
+                <div class="user-profile d-none d-sm-flex align-items-center me-3">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info ms-2">
+                        <span class="welcome-text">مرحباً،</span>
+                        <strong id="userName" class="user-name">أحمد محمد</strong>
+                    </div>
                 </div>
-                <div class="user-info ms-2">
-                    <span class="welcome-text">مرحباً،</span>
-                    <strong id="userName" class="user-name">أحمد محمد</strong>
-                </div>
-            </div>
-            
+            </a>
+
+
             <button id="btnLogout" class="btn btn-logout shadow-sm">
                 <i class="fas fa-sign-out-alt ms-1"></i>
                 <span>خروج</span>
             </button>
         </div>
 
-      
+
 
         <!-- المنتصف: الروابط -->
         <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
             <ul class="navbar-nav mx-auto nav-links-container">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.html">
+                    <a class="nav-link active" href="../home/index.html">
                         <i class="fas fa-home"></i> الرئيسية
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="categories.html">
-                        <i class="fas fa-th-large"></i> الأقسام
+                        <i class="fas fa-th-large"></i> الأطعمة
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="settings.html">
-                        <i class="fas fa-cog"></i> الإعدادات
+                        <i class="fas fa-cog"></i> المجتمع
                     </a>
                 </li>
             </ul>
@@ -49,10 +51,13 @@
             المنصة <span class="text-primary-custom">الذكية</span>
         </a>
 
-          <!-- زر التبديل للموبايل -->
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <!-- زر التبديل للموبايل -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
     </div>
+
+
 </nav>
