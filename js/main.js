@@ -1,39 +1,29 @@
-import { auth, db } from './firebase-config.js';
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { auth, db } from './firebase-config.js'; // Keep db/auth if needed for other things, but checkAuth handles user retrieval.
+// Actually main.js uses db in onAuthStateChanged ONLY to get user doc. checkAuth does that.
+// It uses auth in signOut, but common.js handles signOut setup.
+// So maybe we don't need auth/db imports here if checkAuth provides userData?
+// Wait, main.js DOES NOT use db elsewhere. It uses auth elsewhere?
+// It uses signOut(auth) on click. common.js handles that.
+// So we can remove firebase imports if we trust common.js.
+
+import { loadPartials, checkAuth } from './common.js';
 
 // تحميل النافبار والفوتر
-$("#navbar-placeholder").load("../partials/nav.html");
-$("#footer-placeholder").load("../partials/footer.html");
-
-$(document).on('click', '#btnLogout', function () {
-    signOut(auth).then(() => {
-        window.location.href = '../auth/login.html';
-    });
-});
+loadPartials();
 
 $(document).ready(function () {
-    const GEMINI_API_KEY = "AIzaSyDgKXWtoZ6m0bo-eoYuS3_v4wUYYL9Sp9Y"; 
-    let currentUserData = null; 
+    const GEMINI_API_KEY = "AIzaSyDgKXWtoZ6m0bo-eoYuS3_v4wUYYL9Sp9Y";
+    let currentUserData = null;
 
-   
-    onAuthStateChanged(auth, async (user) => {
-        if (user) {
-            const userDoc = await getDoc(doc(db, "users", user.uid));
-            if (userDoc.exists()) {
-                currentUserData = userDoc.data();
-                $('#userName').text(currentUserData.fullName);
-            }
-        } else {
-            window.location.href = '../auth/login.html';
-        }
+    checkAuth((user, userData) => {
+        currentUserData = userData;
     });
 
     // 2. التواصل مع Gemini API عند الضغط على إرسال
-    $('#btnSend').on('click', async function() {
+    $('#btnSend').on('click', async function () {
         const userText = $('#userInput').val().trim();
         const selectedMoodValue = $('input[name="userMood"]:checked').val();
-        
+
         // التحقق من المدخلات
         if (!selectedMoodValue) {
             alert("يرجى اختيار حالتك المزاجية من الأيقونات أولاً");
@@ -54,7 +44,7 @@ $(document).ready(function () {
         $(this).prop('disabled', true);
 
         // بناء الـ Prompt الاحترافي
- const finalPrompt = `
+        const finalPrompt = `
 أنت مساعد تغذية ذكي.
 
 سيتم تزويدك ببيانات مستخدم تشمل:
@@ -95,7 +85,7 @@ $(document).ready(function () {
 
         console.log(finalPrompt);
 
-        const MODEL_NAME = "gemini-2.5-flash"; 
+        const MODEL_NAME = "gemini-2.5-flash";
 
         try {
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}`, {
@@ -109,16 +99,16 @@ $(document).ready(function () {
             });
 
             const data = await response.json();
-            
+
             if (data.error) throw new Error(data.error.message);
 
             if (data.candidates && data.candidates[0].content) {
                 const aiResponse = data.candidates[0].content.parts[0].text;
-                
+
                 // عرض النتيجة
                 $('#aiContent').text(aiResponse);
                 $('#responseArea').fadeIn();
-                
+
                 // سكرول تلقائي للنتيجة
                 $('html, body').animate({
                     scrollTop: $("#responseArea").offset().top - 100

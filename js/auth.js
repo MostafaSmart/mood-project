@@ -33,4 +33,20 @@ $(document).ready(function () {
             console.log("لا يوجد مستخدم مسجل دخول");
         }
     });
+
+
 });
+
+
+// function loading(flag) {
+
+//     if (flag == 0) {
+//         $('#btnText').addClass('d-none');
+//         $('#btnLoader').removeClass('d-none');
+//     }
+//     else {
+//         $('#btnText').removeClass('d-none');
+//         $('#btnLoader').addClass('d-none');
+//     }
+
+// }

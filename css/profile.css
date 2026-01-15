@@ -1,14 +1,4 @@
-@import url("colors/light.css");
-@import url("shemmer.css");
-
-@import url("nav.css");
-@import url("footer.css");
-body {
-    font-family: 'Tajawal', sans-serif;
-    background-color: #f8fafc;
-    min-height: 100vh;
-    padding-top: 90px; 
-}
+/* Profile Page Custom Styles */
 
 
 /* Profile Page Custom Styles */
@@ -22,7 +12,7 @@ body {
     background: #fff;
     border-radius: 30px;
     padding: 50px;
-    border: 1px solid rgba(0,0,0,0.02);
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 /* التنسيق العلوي (Avatar) */
@@ -55,7 +45,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* تنسيق حقول المعلومات */
@@ -73,7 +63,8 @@ body {
 }
 
 .info-value {
-    background-color: #f8fafc; /* لون الخلفية الهادئ كما في الصورة */
+    background-color: #f8fafc;
+    /* لون الخلفية الهادئ كما في الصورة */
     padding: 15px 25px;
     border-radius: 15px;
     color: #64748b;
@@ -88,7 +79,7 @@ body {
 .info-value:hover {
     background-color: #fff;
     border-color: #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     color: #1e293b;
 }
 
@@ -97,12 +88,12 @@ body {
     .profile-card {
         padding: 30px 20px;
     }
-    
+
     .profile-header {
         flex-direction: column;
         text-align: center !important;
     }
-    
+
     .user-main-info {
         margin-right: 0 !important;
         margin-top: 20px;
@@ -113,10 +104,8 @@ body {
         text-align: center;
         justify-content: center;
     }
-    
+
     .info-label {
         text-align: center;
     }
 }
-
-

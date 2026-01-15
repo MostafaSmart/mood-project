@@ -5,15 +5,16 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDz0UXCOTn6iSjWxx_ZixffLKvEPohhQzc",
-  authDomain: "aaabss.firebaseapp.com",
-  projectId: "aaabss",
-  storageBucket: "aaabss.firebasestorage.app",
-  messagingSenderId: "5585638195",
-  appId: "1:5585638195:web:da151736c835b17d19a446",
-  measurementId: "G-16Q31P962G"
+  apiKey: "AIzaSyD2mYZaFytpYby8kgUPLZKtnfsLqinazlM",
+  authDomain: "mood-project-5de4c.firebaseapp.com",
+  projectId: "mood-project-5de4c",
+  storageBucket: "mood-project-5de4c.firebasestorage.app",
+  messagingSenderId: "675902986206",
+  appId: "1:675902986206:web:7d029b50537ac55756af4f",
+  measurementId: "G-N8NF2BTYR4"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);

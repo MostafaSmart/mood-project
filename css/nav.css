@@ -3,7 +3,7 @@
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 12px 0;
 }
 
@@ -91,5 +91,3 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(239, 35, 60, 0.2);
 }
-
-

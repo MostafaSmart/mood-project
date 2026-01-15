@@ -1,12 +1,10 @@
-@import url("colors/light.css");
-
-
 body::before {
     content: "";
     position: fixed;
     inset: 0;
 
-    background-image: url("../assets/img/backGround.jpg"); /* مسار الصورة */
+    background-image: url("../assets/img/backGround.jpg");
+    /* مسار الصورة */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,9 +24,7 @@ body::after {
 }
 
 body {
-    font-family: 'Tajawal', sans-serif;
     background: var(--primary-gradient);
-    min-height: 100vh;
     display: flex;
     align-items: center;
 }
